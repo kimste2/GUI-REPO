@@ -1,0 +1,108 @@
+ a{
+  text-decoration: none; /* removes underlining */
+  font-size: 130%; /* make text a bit bigger than normal text */
+  color: inherit; /* text color is the same as parent */
+}
+
+.wrapper{
+  padding: 1em;
+}
+
+/* contains top third of page */
+.grid_wrapper_top{
+	color: white;
+	display: grid; 
+ 	grid-template-columns: 10% 90%;
+ 	grid-gap: 1em;
+ 	background-color: #42f4e8 /* change back ground color */
+
+}
+
+/* contains middle third of the page */
+.grid_wrapper_mid{
+	display: grid;
+	grid-template-columns: 70% 30%;
+	background-color: #12f34a;
+	grid-template-rows: 20% 80%;
+	text-align: center;
+}
+
+/* subclass for .grid_wraper_mid */
+.align-text{
+	text-align: center;
+	background-color: red;
+}
+
+/* focusing on changing any p tag within the .align-text class*/
+.align-text p{
+	padding-top: 30px;
+	padding-left: 20px;
+	text-align: center;
+}
+
+.grid_wrapper_bottom{
+	display: inline-grid;
+	grid-template-rows: 50% 50%;
+	 
+}
+
+.left{
+	grid-row-start: 2;
+	grid-column-start: 1;
+}
+
+.right{
+	grid-row-start: 2;
+	grid-column-start: 2;
+}
+/* target all b tags */
+b{
+	font-size: 120%; /* increase font size a bit */
+	font-style: italic; /* make all <b> tags italic */
+}
+
+/* target all p tags*/
+p{
+	text-align: left;
+
+}
+
+/* target only h1 tag */
+h1{
+	background-color: #42f4e8;
+	text-align: center;
+	text-decoration: underline;
+} 
+
+/* target only h2 tag */
+h2{
+	text-align: center;
+	text-decoration: underline;
+}
+
+
+ 
+
+img{
+	 display: inline;
+	 padding-left: 30px; 
+	 padding-top: 21px;
+}
+
+ul{
+	margin: auto;
+	list-style-image: url("Images/checkmark.png"); /* Replace standard bullet with a black check mark */
+}
+
+ol{
+	list-style-image: url("Images/right_arrow.png"); /* */
+}
+
+
+table{
+  margin: auto;
+  background-color: #eee;
+  font-family: Ariel; 
+  font-size: 32px; /* 1em == 16px*/ 
+}
+   
