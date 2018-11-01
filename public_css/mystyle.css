@@ -91,7 +91,7 @@ img{
 
 ul{
 	margin: auto;
-	list-style-image: url("Images/checkmark.png"); /* Replace standard bullet with a black check mark */
+	list-style-image: url("GUI-REPO/Images/checkmark.png"); /* Replace standard bullet with a black check mark */
 }
 
 ol{
