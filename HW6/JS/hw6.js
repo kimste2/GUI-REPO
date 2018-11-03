@@ -7,26 +7,27 @@ function mult_table()
 	h_end = document.getElementById("horizontalEnd").value;
 	v_start = document.getElementById("verticalStart").value;
 	v_end = document.getElementById("verticalEnd").value;
-	console.log("h_start has " + h_start);
-	console.log("h_end has " + h_end);
-	console.log("v_start has " + v_start);
-	console.log("v_end has " + v_end);
+	//console.log("h_start has " + h_start);
+	//console.log("h_end has " + h_end);
+	//console.log("v_start has " + v_start);
+	//console.log("v_end has " + v_end);
 
 	var table = "<table>\n\t"
 	console.log(table);
 	// make a table
 	var i, j;
-	for(i = h_start; i != h_end; ++i)
+	for(i = v_start; i <= v_end; ++i)
 	{
-		table += "<tr\n>";
-		for(j = v_start; j != v_end; ++j)
+		//table += "<tr\n>";
+		for(j = h_start; j <= h_end; ++j)
 		{
-			table += "<th>\n\t" + (i * j) + "/n</tr>/n";
+			console.log( i + " * " + j + " = " + (i *j));
+		//	table += "<th>\n\t" + (i * j) + "/n</tr>/n";
 		}
-		table += "</tr>\n"
+		//table += "</tr>\n"
 	}
 
-	console.log(table);
+	//console.log(table);
 
 	// assign product to each element as necessary
 
