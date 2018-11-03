@@ -1,15 +1,32 @@
+<!--
+  Name: Steve Kim
+  Email: steven_kim@student.uml.edu
+  GUI 1
+  Date: 11.1.18
+  Description: makes a multiplication table from user input
+-->
 <!DOCTYPE html>
 <html>
-<head>
-  <title> HW6 </title>
+<head
+   <meta charset="UTF-8">
+  <title> HW6: Multiplication Table </title>
    <link rel="stylesheet" href="css/hw6.css">
 </head>
 <body>
+	<p>
+	  This program creates a multiplication table based on your input! It combines HTML, CSS and Javascript into one awesome webpage!  Be amazed!.
+	</p>
 
-<h1> Test </h1>
-<p> 
-  This is a paragraph.
-</p>
+	<form id="input">
+	  Starting Horizontal Number (from 0 to 1000) <input type="number" id="horizontalStart" name="horizontalStart" value="1">
+	  Ending Horizontal Number (from 0 to 1000) <input type="number" id="horizontalEnd" value="3">
+	  Starting Vertical Number (from 0 to 1000) <input type="number" id="verticalStart" value="1"> 
+	  Ending Vertical Number (from 0 to 1000) <input type="number" id="verticalEnd"  value="3">
+	 <!-- <input type="submit" value="Submit"> -->
+	</form>
+	<button onclick="mult_table()">Click me</button>
 
+ <!-- script tag has to go here-->
+ <script src="JS/hw6.js"></script>
 </body>
 </html>
