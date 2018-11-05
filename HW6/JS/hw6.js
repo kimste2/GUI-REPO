@@ -13,28 +13,23 @@ function mult_table()
 	//console.log("v_end has " + v_end);
 
 	var table = "<table>\n\t"
-	console.log(table);
+	//console.log(table);
 	// make a table
 	var i, j;
 	for(i = v_start; i <= v_end; ++i)
 	{
-		//table += "<tr\n>";
+		table += "<tr\n>";
 		for(j = h_start; j <= h_end; ++j)
 		{
 			console.log( i + " * " + j + " = " + (i *j));
-		//	table += "<th>\n\t" + (i * j) + "/n</tr>/n";
+			table += "<th>" + (i * j) + "<//th>";
 		}
-		//table += "</tr>\n"
+		table += "<//tr>\n"
 	}
 
-	//console.log(table);
+	console.log(table);
 
-	// assign product to each element as necessary
-
-
-
-
-
+	document.write(table);
 }
 
 function check_input(p1)
