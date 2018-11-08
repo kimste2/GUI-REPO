@@ -1,3 +1,9 @@
+// Name: Steve Kim
+// Email: steven_kim@student.uml.edu
+// COMP 4610: Assignment 6
+// Date: 11.1.18
+// Description: makes a multiplication table from user input
+
 function mult_table()
 {
 	// get local variables from HTML
@@ -18,18 +24,18 @@ function mult_table()
 	var i, j;
 	for(i = v_start; i <= v_end; ++i)
 	{
-		table += "<tr\n>";
+		table += "<tr>\n";
 		for(j = h_start; j <= h_end; ++j)
 		{
 			console.log( i + " * " + j + " = " + (i *j));
-			table += "<th>" + (i * j) + "<//th>";
+			table += "<th>" + (i * j) + "</th>";
 		}
-		table += "<//tr>\n"
+		table += "</tr>\n"
 	}
-
+  table += "</table>\n";
 	console.log(table);
 
-	document.write(table);
+	document.write("<h1>\n" + table + "\n" + "</h1>");
 }
 
 function check_input(p1)
