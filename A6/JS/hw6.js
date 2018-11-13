@@ -35,14 +35,14 @@ function mult_table()
 
 	for(j = h_start; j <= h_end; ++j)
 	{
-		table += "<td>" + j + "</td>\n";
+		table += "<td> " + j + "</td>\n";
 	}
 	table += "</tr>"
 
 	for(i = v_start; i <= v_end; ++i)
 	{
 //		table += "\t<tr>\n";
-		table += "<td>" + i + "</td>\n";
+		table += "<td> " + i +  "</td>\n";
 		for(j = h_start; j <= h_end; ++j)
 		{
 		//	console.log( i + "|" + j + " = " + (i *j));
