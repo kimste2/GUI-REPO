@@ -18,13 +18,14 @@ Description: makes a multiplication table from user input
 
 .prompt{
   font-family: "Times New Roman";
+  display: block;
   font-size: 1.5em;
   text-align: center;
   padding-left: 5px;
 }
 
 button{
-
+display: block;
 }
 input{
   width: 5em;
@@ -36,7 +37,7 @@ table{
   border-collapse: collapse;
 
 }
-th,td{
+tbody,th,td{
   border: 2px solid black;
   text-align: center;
   padding: 12px;
@@ -48,8 +49,11 @@ table>tbody>tr:first-child> td:first-child{
 table>tbody>tr:first-child{
   text-decoration: underline;
   background-color: blue;
+  color: white;
 }
-table>tbody>td{
-  text-decoration:line-through;
+
+td:nth-child(1){
+  text-decoration: underline;
   background-color: red;
+  color: white;
 }

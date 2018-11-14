@@ -24,14 +24,14 @@ function mult_table()
 	//console.log("v_start has " + v_start);
 	//console.log("v_end has " + v_end);
 
-	var table = "<table>\n"
+	var table = "<table class=\"mult_table\">\n<tbody>\n"
 	//console.log(table);
 	// make a table
 	var i, j;
  	table += "<tr>\n"
 
 	// intentionally left blank
-	table += "<td></td>"
+	table += "<td></td>\n"
 
 	for(j = h_start; j <= h_end; ++j)
 	{
@@ -50,7 +50,7 @@ function mult_table()
 		}
 		table += "\t</tr>\n"
 	}
-  table += "</table>\n";
+  table += "</tbody></table>\n";
 //	console.log(table);
 	document.getElementById("table").innerHTML = table;
 
