@@ -77,7 +77,7 @@ function check_input_lower(p1, p2)
 	// p3 is the lower limit
 function check_input_upper(p1, p2 , p3)
 {
-	if(isNaN(p1) ||  p1 < start_limit || p1 > end_limit || p1 < p3)
+	if(isNaN(p1) ||  p1 < start_limit || p1 > end_limit || p1 > p3)
 	{
 		alert(p2 + "must be a number between " + start_limit + " and " + end_limit + " as well as be larger than " + p3 + ".");
 		var error = "Restart webpage";
