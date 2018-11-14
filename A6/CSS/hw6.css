@@ -44,7 +44,7 @@ tbody,th,td{
   font-size: 2em;
 }
 table>tbody>tr:first-child> td:first-child{
-  background-color: black;
+  background-color: white;
 }
 table>tbody>tr:first-child{
   text-decoration: underline;
