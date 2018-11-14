@@ -25,7 +25,10 @@ Description: makes a multiplication table from user input
 }
 
 button{
-display: block;
+  display: block;
+  padding: 15px 32px;
+  font-size: 2em;
+  margin: auto;
 }
 input{
   width: 5em;
