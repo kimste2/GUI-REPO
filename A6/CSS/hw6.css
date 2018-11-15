@@ -61,6 +61,11 @@ td:nth-child(1){
   color: white;
 }
 
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
 ul{
   list-style-type: circle;
   list-style-position: outside;
