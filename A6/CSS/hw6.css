@@ -60,3 +60,17 @@ td:nth-child(1){
   background-color: red;
   color: white;
 }
+
+ul{
+  list-style-type: circle;
+  list-style-position: outside;
+  display:;
+  text-align: center;
+  margin: 0 auto;
+
+}
+li{
+  text-decoration: none;
+  display: inline;
+  padding: 1em;
+}
