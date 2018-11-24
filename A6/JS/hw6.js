@@ -1,6 +1,6 @@
 // Name: Steve Kim
 // Email: steven_kim@student.uml.edu
-// COMP 4610: Assignment 6
+// COMP 4610: Assignment 7
 // Date: 11.1.18
 // Description: makes a multiplication table from user input
 var end_limit = 50;
