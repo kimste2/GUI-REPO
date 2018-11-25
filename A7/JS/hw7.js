@@ -77,31 +77,41 @@ var validtor = $("#numbers").validate({
 				max: 50,
 				number: true
 			},
-			horizontalStart:{
-				min: 0,
-				max: "#horizontalEnd",
-			},
-			horizontalEnd:{
-				min: "#horizontalStart",
-				max: 50,
-			},
-			verticalStart:{
-				min: 0,
-				max: "#verticalEnd",
-			},
-			verticalEnd:{
-				min: "#verticalStart",
-				max: 50,
-			}
+
 		}, // end of rules
 		messages:{
 			horizontalStart: "Please enter a number less than the (horizontal) ending number.",
 			horizontalEnd: "Please enter a number greater than the (horizontal) starting number.",
-			veriticalStart:"Please enter a number less than the (vertical) ending number.",
+			verticalStart:"Please enter a number less than the (vertical) ending number.",
 			verticalEnd: "Please enter a number greater than the (vertical) starting number. ",
 		},
 
 }); // end of validate
+
+$("#horizontalEnd").on({
+	"input":function(){console.log("input");
+		var f = parseInt($("#horizontalStart").val());
+		var g = parseInt($("#horizontalEnd").val());
+		if (f > g)
+		{
+			console.log("F is bigger than g. What to do now?");
+				$("#numbers").validate();
+		}
+
+	}
+});
+
+$("#verticalEnd").on({
+	"input":function(){console.log("input");
+		var h = parseInt($("#verticalStart").val());
+		var i = parseInt($("verticalEnd").val());
+		if (h > i)
+		{
+			console.log("F is bigger than g. What to do now?");
+		}
+
+	}
+});
 
 
 $('#button').on('click', function() {
