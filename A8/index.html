@@ -1,0 +1,63 @@
+<!--
+  Name: Steve Kim
+  Email: steven_kim@student.uml.edu
+  COMP 4610: Assignment 8
+  Date: 11.27.18
+  Description: makes a multiplication table from user input, uses jQuery to validate data
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> HW7: Multiplication Table and jQuery </title>
+  <link rel="stylesheet" href="./CSS/hw8.css">
+
+</head>
+<body>
+  <div class="description">
+	<p>
+	  This program creates a multiplication table based on your input! It combines HTML, CSS and Javascript into one awesome web application!
+    It is based on HW6 and uses jQuery to check input.
+	</p>
+  </div>
+
+	<form id="numbers">
+	  Starting Horizontal Start Number <input type="number" class="form-control required" name="horizontalStart" id="horizontalStart" label:"number"  > <br>
+    <div class="slider1">
+       <input type="range" min="1" max="50" value="3" class="slider" id="horizontalStart">
+        <p>Value: <span id="demo"></span></p>
+    </div></br>
+
+
+
+    Ending Horizontal End Number <input type="number" class="form-control required" name="horizontalEnd" id="horizontalEnd" label:"number"> <br>
+	  Starting Vertical Start Number  <input type="number" class="form-control required" name="verticalStart" id="verticalStart" label:"number" > <br>
+	  Ending Vertical End Number <input type="number" class="form-control required" name="verticalEnd" id="verticalEnd"  label:"number"> <br>
+	  </form>
+	<!--<button id="button" type="submit" value="Validate!">Click me</button> -->
+  <input id="button" type="button" value="Click me!" click="mult_table()">
+
+  <div id="table">
+  </div>
+
+    <ul>
+      <lh>Assignments Links: </lh>
+      <li> <a href="http://weblab.cs.uml.edu/~skim1/">Assignment 2</a> </li>
+      <li> <a href="http://weblab.cs.uml.edu/~skim1/hw3/index.html">Assignment 3</a> </li>
+     <li> <a href="http://weblab.cs.uml.edu/~skim1/">Assignment 4</a> </li>
+     <li> <a href="https://kimste2.github.io/GUI-REPO/">Assignment 5</a></li>
+     <li> <a href="https://kimste2.github.io/GUI-REPO/A6/index.html">Assignment 6</a></li>
+     <li> <a href="https://kimste2.github.io/GUI-REPO/A7/index.html">Assignment 7</a></li>
+    </ul>
+
+
+
+ <!-- script tag has to go here -->
+ <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="JS/hw8.js"></script>
+
+</body>
+
+</html>

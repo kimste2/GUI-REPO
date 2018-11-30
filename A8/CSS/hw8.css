@@ -1,0 +1,116 @@
+/*
+Name: Steve Kim
+Email: steven_kim@student.uml.edu
+COMP 4610: Assignment 7
+Date: 11.20.18
+Description: makes a multiplication table from user input
+*/
+table{
+  padding: 10px;
+}
+p{
+  padding: auto;
+
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider1{
+  border-style: dotted;
+}
+
+ .slider{
+   -webkit-apperence: none;
+   apperence: none;
+   width: auto;
+   height: auto;
+   background-color: pink;
+ }
+
+.error{
+       color: red;
+       font-size: 1.5em;
+}
+label{
+  font-size: 1.5em;
+  display:block;
+  padding-left: 1px;
+  margin-left: 1px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.description{
+  /*background-color: red;*/
+  display: block;
+  font-family: "Times New Roman";
+  font-size: 2em;
+  text-align: left;
+  padding-left: 5px;
+  margin:auto;
+}
+
+#numbers{
+  font-family: "Times New Roman";
+  display: block;
+  font-size: 1.5em;
+  text-align: center;
+  padding-left: 5px;
+}
+
+#button{
+  display: block;
+  padding: 15px 32px;
+  font-size: 2em;
+  margin: auto;
+}
+input{
+  width: 5em;
+  height: 2em;
+
+}
+table{
+  margin: auto;
+  border-collapse: collapse;
+
+}
+tbody,th,td{
+  border: 2px solid black;
+  text-align: center;
+  padding: 12px;
+  font-size: 2em;
+}
+table>tbody>tr:first-child> td:first-child{
+  background-color: white;
+}
+table>tbody>tr:first-child{
+  text-decoration: underline;
+  background-color: blue;
+  color: white;
+}
+
+td:nth-child(1){
+  text-decoration: underline;
+  background-color: red;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
+ul{
+  list-style-type: circle;
+  list-style-position: outside;
+  display:;
+  text-align: center;
+  margin: 0 auto;
+
+}
+li{
+  text-decoration: none;
+  display: inline;
+  padding: 1em;
+}
