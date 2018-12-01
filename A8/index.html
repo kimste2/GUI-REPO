@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> HW7: Multiplication Table and jQuery </title>
+  <title> HW8:Slider bars and tabs </title>
   <link rel="stylesheet" href="./CSS/hw8.css">
 
 </head>
@@ -17,23 +17,32 @@
   <div class="description">
 	<p>
 	  This program creates a multiplication table based on your input! It combines HTML, CSS and Javascript into one awesome web application!
-    It is based on HW6 and uses jQuery to check input.
+    It is based on HW6 and HW7 and uses jQuery to check input. HW8 adds a slider bar and then opening the multiplcaiton table in a new tab.
 	</p>
   </div>
 
 	<form id="numbers">
-	  Starting Horizontal Start Number <input type="number" class="form-control required" name="horizontalStart" id="horizontalStart" label:"number"  > <br>
-    <div class="slider1">
-       <input type="range" min="1" max="50" value="3" class="slider" id="horizontalStart">
-        <p>Value: <span id="demo"></span></p>
+	  Starting Horizontal Start Number <input type="number" value=1 link-to="sliderOne" class="form-control required" name="horizontalStart" id="horizontalStart" label:"number"  > <br>
+      <div class="slider">
+        <input type="range" min=0 max=50 value=1 class="slider" id="sliderOne">
+      </div></br>
+
+
+
+    Ending Horizontal End Number <input type="number" value=3 link-to="sliderTwo" class="form-control required" name="horizontalEnd" id="horizontalEnd" label:"number"> <br>
+    <div class="slider">
+      <input type="range" min=0 max=50 value=3 class="slider" id="sliderTwo">
     </div></br>
+    Starting Vertical Start Number  <input type="number" value=1 link-to="sliderThree" class="form-control required" name="verticalStart" id="verticalStart" label:"number" > <br>
+    <div class="slider">
+      <input type="range" min=0 max=50 value=1 class="slider" id="sliderThree">
+    </div></br>
+    Ending Vertical End Number <input type="number" link-to="sliderFour" value=5 class="form-control required" name="verticalEnd" id="verticalEnd"  label:"number"> <br>
 
-
-
-    Ending Horizontal End Number <input type="number" class="form-control required" name="horizontalEnd" id="horizontalEnd" label:"number"> <br>
-	  Starting Vertical Start Number  <input type="number" class="form-control required" name="verticalStart" id="verticalStart" label:"number" > <br>
-	  Ending Vertical End Number <input type="number" class="form-control required" name="verticalEnd" id="verticalEnd"  label:"number"> <br>
-	  </form>
+    <div class="slider">
+      <input type="range" min=0 max=50 value=5 class="slider" id="sliderFour">
+    </div></br>
+    </form>
 	<!--<button id="button" type="submit" value="Validate!">Click me</button> -->
   <input id="button" type="button" value="Click me!" click="mult_table()">
 

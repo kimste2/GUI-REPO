@@ -1,9 +1,9 @@
 /*
 Name: Steve Kim
 Email: steven_kim@student.uml.edu
-COMP 4610: Assignment 7
-Date: 11.20.18
-Description: makes a multiplication table from user input
+COMP 4610: Assignment 8
+Date: 12.1.18
+Description: adding off HW7 with a slider and tabs
 */
 table{
   padding: 10px;
@@ -13,22 +13,35 @@ p{
 
 }
 
-.slider:hover {
-    opacity: 1;
+slidecontainer{
+  width: 100%;
+}
+.slider{
+  -webkit-appearance: none;
+  width: 75%;
+  height: 50px;
+  outline-style: solid;
+  background-color: grey;
+  cursor: pointer;
 }
 
-.slider1{
-  border-style: dotted;
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 30px;
+    background: black;
+    cursor: pointer;
+
 }
 
- .slider{
-   -webkit-apperence: none;
-   apperence: none;
-   width: auto;
-   height: auto;
-   background-color: pink;
- }
-
+input[type=range]::-webkit-slider-runnable-track{
+  width: 300px;
+  height: inherit;
+  background: #ddd;
+  border: rounded;
+  border-radius: 3px;
+}
 .error{
        color: red;
        font-size: 1.5em;

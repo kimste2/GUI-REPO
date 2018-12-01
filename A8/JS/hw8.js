@@ -1,6 +1,6 @@
 // Name: Steve Kim
 // Email: steven_kim@student.uml.edu
-// COMP 4610: Assignment 7
+// COMP 4610: Assignment 8
 // Date: 11.20.18
 // Description: makes a multiplication table from user input
 
@@ -92,25 +92,95 @@ var validtor = $("#numbers").validate({
 }); // end of validate
 
 $("#horizontalEnd").on({
-	"input":function(){console.log("input");
+	"input":function(){
+    console.log("Horizontal end error");
 		var f = parseInt($("#horizontalStart").val());
 		var g = parseInt($("#horizontalEnd").val());
-		if (f > g)
+    var temp;
+    if (f > g)
 		{
 			console.log("F is bigger than g. What to do now?");
-				$("#horizontalStart").validate();
+      $("#horizontalStart").val = 5;
+
 		}
 
 	}
 });
 
+// sliderOne value -> corresponding horizontalStart box
+$('#sliderOne').on('input',function(){
+  var box1 = $('#sliderOne').val();
+  //console.log("box1 will be " + box1);
+  $('#horizontalStart').val(box1);
+});
+
+// corresponding horizontalStart box -> sliderOne value
+$('#horizontalStart').on('input', function(){
+  var slider1 = $('#horizontalStart').val();
+  console.log("slider1 will be " + slider1);
+  $('#sliderOne').val(slider1);
+});
+
+// sliderTwo value -> horizontalEnd box
+$('#sliderTwo').on('input',function(){
+  var box1 = $('#sliderTwo').val();
+  //console.log("box1 will be " + box1);
+  $('#horizontalEnd').val(box1);
+});
+
+// corresponding horizontalEnd box -> sliderTwo value
+$('#horizontalEnd').on('input', function(){
+  var slider1 = $('#horizontalEnd').val();
+  console.log("slider2 will be " + slider1);
+  $('#slidertwo').val(slider1);
+});
+
+// slider2 value -> horizontalEnd box
+$('#sliderTwo').on('input',function(){
+  var box1 = $('#sliderTwo').val();
+  //console.log("box1 will be " + box1);
+  $('#horizontalEnd').val(box1);
+});
+
+// corresponding horizontalEnd box -> slider2 value
+$('#horizontalEnd').on('input', function(){
+  var slider1 = $('#horizontalEnd').val();
+  console.log("slider2 will be " + slider1);
+  $('#sliderTwo').val(slider1);
+});
+
+// slider3 value -> verticalStart box
+$('#sliderThree').on('input',function(){
+  var box1 = $('#sliderThree').val();
+  $('#verticalStart').val(box1);
+});
+
+// corresponding verticalStart box -> sliderThree value
+$('#verticalStart').on('input', function(){
+  var slider1 = $('#verticalStart').val();
+  $('#sliderThree').val(slider1);
+});
+
+// sliderFour value -> verticalEnd box
+$('#sliderFour').on('input',function(){
+  var box1 = $('#sliderFour').val();
+  $('#verticalEnd').val(box1);
+});
+
+// corresponding verticalEnd box -> sliderFour value
+$('#verticalEnd').on('input', function(){
+  var slider1 = $('#verticalEnd').val();
+  $('#sliderFour').val(slider1);
+});
+
 $("#verticalEnd").on({
-	"input":function(){console.log("input");
+	"input":function(){
+    console.log("Vertical input error");
 		var h = parseInt($("#verticalStart").val());
 		var i = parseInt($("verticalEnd").val());
 		if (h > i)
 		{
-			console.log("F is bigger than g. What to do now?");
+      console.log("Error Vertical end is greater than vertical start.")
 		}
 
 	}
