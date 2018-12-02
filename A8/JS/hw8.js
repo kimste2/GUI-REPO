@@ -62,8 +62,11 @@ function mult_table()
 	}
   table += "</tbody></table>\n";
 	//console.log(table);
-	document.getElementById("table").innerHTML = table;
-
+  // var tab + number;
+  //tab1.getElementById("table").innerHTML = table;
+	//document.getElementById("frame").srcdoc.innerHTML = table;
+  //document.getElementById("frame").src.getElementById("wrapper").innerHTML = table;
+  document.getElementById("frame").srcdoc = table;
 }
 
 
@@ -188,7 +191,7 @@ $("#verticalEnd").on({
 
 
 $('#button').on('click', function() {
-	$("#numbers").validate();
+	//$("#numbers").validate();
 	//alert("Do you have what you want?\n" + $("#horizontalStart").val() + " : " + $("#horizontalEnd").val() + "\n" + $("#verticalStart").val() + " : " + $("#verticalEnd").val());
 	mult_table();
 });
