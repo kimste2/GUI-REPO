@@ -21,7 +21,7 @@ function add_tab()
 
   console.log("Add tab");
   var divID = "table" + count;
-  var s = "<a href=\"" + divID + "\">Table" + count + "</a>"
+  var s = "<a href=\"#"  + divID + "\">Table" + count + "</a>"
   console.log(s);
 
   var list = document.getElementById("tab-list");
@@ -218,6 +218,6 @@ $('#button').on('click', function() {
 	//$("#numbers").validate();
 	//alert("Do you have what you want?\n" + $("#horizontalStart").val() + " : " + $("#horizontalEnd").val() + "\n" + $("#verticalStart").val() + " : " + $("#verticalEnd").val());
   add_tab();
-  
+
   //mult_table();
 });
