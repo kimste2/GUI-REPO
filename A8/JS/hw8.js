@@ -37,6 +37,14 @@ function add_tab()
   count += 1;
 }
 
+$(function(){
+   $('#table1').on('click',function(){
+     alert("Hello");
+     console.log("Hello");
+   })
+
+});
+
 
 // function creates multiplcation table
 function mult_table()
@@ -92,7 +100,7 @@ function mult_table()
 		}
 		table += "\t</tr>\n"
 	}
-  table += "</tbody></table>\n";
+  table += "</tbody></table><br/>\n";
   return table;
 }
 
