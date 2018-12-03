@@ -1,12 +1,44 @@
 // Name: Steve Kim
 // Email: steven_kim@student.uml.edu
 // COMP 4610: Assignment 8
-// Date: 11.20.18
+// Date: 12.2.18
 // Description: makes a multiplication table from user input
 
 var end_limit = 50;
 var start_limit = 0;
 var h_start, h_end, v_start, v_end;
+var count = 1;
+//
+function add_tab()
+{
+  if(count > 1)
+  {
+    var temp = count -1;
+    console.log(temp);
+    var id = "table" + temp;
+    $(id).hide();
+  }
+
+  console.log("Add tab");
+  var divID = "table" + count;
+  var s = "<a href=\"" + divID + "\">Table" + count + "</a>"
+  console.log(s);
+
+  var list = document.getElementById("tab-list");
+
+  //create new li element
+  var item = document.createElement("li");
+  item.innerHTML += s;
+  list.append(item);
+
+  var table = "<div id=\"" + divID + "\">\n"  + mult_table() + "</div>";
+  document.getElementById("tabs").innerHTML += table;
+  console.log(table)
+  count += 1;
+}
+
+
+// function creates multiplcation table
 function mult_table()
 {
 	// get local variables from HTML
@@ -61,12 +93,7 @@ function mult_table()
 		table += "\t</tr>\n"
 	}
   table += "</tbody></table>\n";
-	//console.log(table);
-  // var tab + number;
-  //tab1.getElementById("table").innerHTML = table;
-	//document.getElementById("frame").srcdoc.innerHTML = table;
-  //document.getElementById("frame").src.getElementById("wrapper").innerHTML = table;
-  document.getElementById("frame").srcdoc = table;
+  return table;
 }
 
 
@@ -94,21 +121,6 @@ var validtor = $("#numbers").validate({
 
 }); // end of validate
 
-$("#horizontalEnd").on({
-	"input":function(){
-    console.log("Horizontal end error");
-		var f = parseInt($("#horizontalStart").val());
-		var g = parseInt($("#horizontalEnd").val());
-    var temp;
-    if (f > g)
-		{
-			console.log("F is bigger than g. What to do now?");
-      $("#horizontalStart").val = 5;
-
-		}
-
-	}
-});
 
 // sliderOne value -> corresponding horizontalStart box
 $('#sliderOne').on('input',function(){
@@ -189,9 +201,23 @@ $("#verticalEnd").on({
 	}
 });
 
+$("#horizontalEnd").on({
+	"input":function(){
+    console.log("Horizontal end error");
+		var f = parseInt($("#horizontalStart").val());
+		var g = parseInt($("#horizontalEnd").val());
+    var temp;
+    if (f > g)
+		{
+			console.log("F is bigger than g. What to do now?");
+		}
+	}
+});
 
 $('#button').on('click', function() {
 	//$("#numbers").validate();
 	//alert("Do you have what you want?\n" + $("#horizontalStart").val() + " : " + $("#horizontalEnd").val() + "\n" + $("#verticalStart").val() + " : " + $("#verticalEnd").val());
-	mult_table();
+  add_tab();
+  
+  //mult_table();
 });
