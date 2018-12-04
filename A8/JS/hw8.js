@@ -9,33 +9,30 @@ var start_limit = 0;
 var h_start, h_end, v_start, v_end;
 var count = 1;
 //
+
 function add_tab()
 {
-  if(count > 1)
-  {
-    var temp = count -1;
-    console.log(temp);
-    var id = "table" + temp;
-    $(id).hide();
-  }
-
-  console.log("Add tab");
+  console.log("Add tabs 1");
+  // create unique id
   var divID = "table" + count;
-  var s = "<a href=\"#"  + divID + "\">Table" + count + "</a>"
-  console.log(s);
+  console.log("divId: " + divID);
+  var s = "<a href=\"#"  + divID + "\">Table" + count + "</a>  ";
+  var html = "<div id =\"" + divID + "\">"  + mult_table() + "</div>";
+  console.log(html);
+  $("tabs").tabs();
+  // add s to list
+  $("div#tabs ul").append(s);
+  $("div#tabs").append(html);
 
-  var list = document.getElementById("tab-list");
+  $("tabs").tabs();
+  // add html to div
 
-  //create new li element
-  var item = document.createElement("li");
-  item.innerHTML += s;
-  list.append(item);
-
-  var table = "<div id=\"" + divID + "\">\n"  + mult_table() + "</div>";
-  document.getElementById("tabs").innerHTML += table;
-  console.log(table)
-  count += 1;
+  //
+  count +=1;
 }
+
+
+
 
 $(function(){
    $('#table1').on('click',function(){
