@@ -2,7 +2,7 @@
   Name: Steve Kim
   Email: steven_kim@student.uml.edu
   COMP 4610: Assignment 8
-  Date: 11.27.18
+  Date: 12.4.18
   Description: makes a multiplication table from user input, uses jQuery to validate data
 -->
 <!DOCTYPE html>
@@ -22,25 +22,26 @@
   </div>
 
 	<form id="numbers">
-	  Starting Horizontal Start Number <input type="number" value=1 link-to="sliderOne" class="form-control required" name="horizontalStart" id="horizontalStart" label:"number"  > <br>
+	  Starting Horizontal Start Number <input type="number" value=1 link-to="sliderOne" class="form-control required" name="horizontalStart" id="horizontalStart" label:"number"> </br>
       <div class="slider">
         <input type="range" min=0 max=50 value=1 class="slider" id="sliderOne">
       </div></br>
-    Ending Horizontal End Number <input type="number" value=3 link-to="sliderTwo" class="form-control required" name="horizontalEnd" id="horizontalEnd" label:"number"> <br>
+    Ending Horizontal End Number <input type="number" value=3 link-to="sliderTwo" class="form-control required" name="horizontalEnd" id="horizontalEnd" label:"number"> </br>
     <div class="slider">
       <input type="range" min=0 max=50 value=3 class="slider" id="sliderTwo">
     </div></br>
-    Starting Vertical Start Number  <input type="number" value=1 link-to="sliderThree" class="form-control required" name="verticalStart" id="verticalStart" label:"number" > <br>
+    Starting Vertical Start Number  <input type="number" value=1 link-to="sliderThree" class="form-control required" name="verticalStart" id="verticalStart" label:"number" > </br>
     <div class="slider">
       <input type="range" min=0 max=50 value=1 class="slider" id="sliderThree">
     </div></br>
-    Ending Vertical End Number <input type="number" link-to="sliderFour" value=5 class="form-control required" name="verticalEnd" id="verticalEnd"  label:"number"> <br>
+    Ending Vertical End Number <input type="number" link-to="sliderFour" value=5 class="form-control required" name="verticalEnd" id="verticalEnd"  label:"number"> </br>
     <div class="slider">
       <input type="range" min=0 max=50 value=5 class="slider" id="sliderFour">
     </div></br>
     </form>
 	<!--<button id="button" type="submit" value="Validate!">Click me</button> -->
-  <input id="button" type="button" value="Click me!" click="mult_table()">
+  <input id="button" type="button" value="Create Table!" click="mult_table()">
+    <input id="button1" type="button" value="Delete All Tabs!" click="delete_tabs()">
   </br>
   <!-- <div id="table">
  </div></br> -->
@@ -49,7 +50,7 @@
       <ul id="tab-list">
 
       </ul>
-    
+
     </div>
 
     <footer>
@@ -69,7 +70,6 @@
  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-
  <script src="JS/hw8.js"></script>
 </body>
 

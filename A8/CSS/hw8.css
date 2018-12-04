@@ -2,14 +2,14 @@
 Name: Steve Kim
 Email: steven_kim@student.uml.edu
 COMP 4610: Assignment 8
-Date: 12.1.18
+Date: 12.4.18
 Description: adding off HW7 with a slider and tabs
 */
 
- 
+
 
 table{
-  padding: 10px;
+  border-bottom: padding: 10px;
 }
 p{
   padding: auto;
@@ -76,6 +76,13 @@ label{
 }
 
 #button{
+  display: block;
+  padding: 15px 32px;
+  margin-bottom: 50px;
+  font-size: 2em;
+  margin: auto;
+}
+#button1{
   display: block;
   padding: 15px 32px;
   margin-bottom: 50px;

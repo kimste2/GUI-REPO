@@ -1,13 +1,23 @@
 // Name: Steve Kim
 // Email: steven_kim@student.uml.edu
 // COMP 4610: Assignment 8
-// Date: 12.2.18
+// Date: 12.4.18
 // Description: makes a multiplication table from user input
 
 var end_limit = 50;
 var start_limit = 0;
 var h_start, h_end, v_start, v_end;
 var count = 0;
+
+function delete_tabs()
+{
+  $('#tabs').remove();
+  count = 0;
+  $("body").append("<div id=\"tabs\">\n<ul id=\"tabs-list\">\n </ul>\n</div>");
+  $("#tabs").tabs();
+  // reset count
+
+}
 
 function add_tab()
 {
@@ -25,7 +35,11 @@ function add_tab()
   // add html to tabs
   $("div#tabs").append(html);
   if(count > 0)
+  {
     $("#tabs").tabs("refresh");
+  }
+
+
   // increment count
   count +=1;
 }
@@ -220,4 +234,8 @@ $('#button').on('click', function() {
   add_tab();
 
   //mult_table();
+});
+
+$('#button1').on('click', function(){
+  delete_tabs();
 });
