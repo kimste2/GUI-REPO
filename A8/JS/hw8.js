@@ -7,40 +7,35 @@
 var end_limit = 50;
 var start_limit = 0;
 var h_start, h_end, v_start, v_end;
-var count = 1;
-//
+var count = 0;
 
 function add_tab()
 {
-  console.log("Add tabs 1");
+//  console.log("Add tabs 1");
   // create unique id
   var divID = "table" + count;
-  console.log("divId: " + divID);
-  var s = "<a href=\"#"  + divID + "\">Table" + count + "</a>  ";
-  var html = "<div id =\"" + divID + "\">"  + mult_table() + "</div>";
-  console.log(html);
-  $("tabs").tabs();
+  //console.log("divId: " + divID);
+  var s = $("<li><a href=\"#"  + divID + "\">Table" + count + "</a></li>");
+  var html = $("<div id =\"" + divID + "\"> "  + mult_table() + "</div>");
+  //console.log(html);
+
   // add s to list
   $("div#tabs ul").append(s);
+
+  // add html to tabs
   $("div#tabs").append(html);
-
-  $("tabs").tabs();
-  // add html to div
-
-  //
+  if(count > 0)
+    $("#tabs").tabs("refresh");
+  // increment count
   count +=1;
 }
 
+// Generate first tabs
+add_tab();
+// Initialize tabs
+$("#tabs").tabs();
 
 
-
-$(function(){
-   $('#table1').on('click',function(){
-     alert("Hello");
-     console.log("Hello");
-   })
-
-});
 
 
 // function creates multiplcation table
