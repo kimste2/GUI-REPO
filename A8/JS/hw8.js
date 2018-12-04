@@ -12,11 +12,12 @@ var count = 0;
 function delete_tabs()
 {
   $('#tabs').remove();
-  count = 0;
   $("body").append("<div id=\"tabs\">\n<ul id=\"tabs-list\">\n </ul>\n</div>");
+  count = 0;
+  // Generate first tabs
+  add_tab();
+  // Initialize tabs
   $("#tabs").tabs();
-  // reset count
-
 }
 
 function add_tab()
@@ -38,8 +39,6 @@ function add_tab()
   {
     $("#tabs").tabs("refresh");
   }
-
-
   // increment count
   count +=1;
 }
