@@ -48,9 +48,6 @@ add_tab();
 // Initialize tabs
 $("#tabs").tabs();
 
-
-
-
 // function creates multiplcation table
 function mult_table()
 {
