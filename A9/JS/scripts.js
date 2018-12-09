@@ -13,24 +13,22 @@ function startGame()
    for(var i = 1; i < 8; ++i)
    {
      var id = "tile" + i;
-     var s = "<div id=\"" + id + "\">\n";
+     var s = "<div id=\"" + id +  "\" class=\"rows\">\n";
      var t = get_single_tile();
      s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\">\n";
      s += "</div>\n";
 
      $('#tile-row').append(s);
-     console.log("i is: "+i);
+     console.log("i is: " +i);
    }
-
-
  }
 
-// returns a single random tile in the form of a string (such as "a.jpg")
+// returns a single random tile in the form of a string (such as "A.jpg")
 function get_single_tile()
 {
   // get random number between [0,27]
   // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  var random = Math.floor(Math.random() * (27 - 1) + 1);
+  var random = Math.floor(Math.random() * (23 - 1) + 1);
   console.log(random);
 
   // use random number to get a letter from numberToLetter associative array

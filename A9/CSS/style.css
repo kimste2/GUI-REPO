@@ -1,1 +1,4 @@
- 
+.rows{
+  display: inline;
+  outline: 2px dashed pink;
+  }

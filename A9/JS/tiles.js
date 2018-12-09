@@ -27,6 +27,7 @@ ScrabbleTiles["Y"] = { "value" : 4,  "original-distribution" : 2,  "number-remai
 ScrabbleTiles["Z"] = { "value" : 10, "original-distribution" : 1,  "number-remaining" : 1  } ;
 ScrabbleTiles["_"] = { "value" : 0,  "original-distribution" : 2,  "number-remaining" : 2  } ;
 
+// used to associate a number [1,23] with a letter or "_"
 var numberToLetter =[];
 numberToLetter[1]= {"value":"A"};
 numberToLetter[2]= {"value":"B"};
