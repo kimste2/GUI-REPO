@@ -9,7 +9,7 @@
     <p>Scrabble Implementation</p>
     <div id="game">
       <div id="tileBoard">
-          <img src="../Images/single_line.png" alt="Game board">
+          <img src="../Images/single_line.png" alt="Game board" class="ui-droppable">
         </div>
         <div id="Score">
           Your score is:
@@ -19,12 +19,12 @@
         <div id="tileHolder">
           <img src="../Images/tile_holder.png" alt="tile-holder">
         </div>
-        
+
         <div id="startGame">
           <button onclick="startGame()">Start Game</button>
         </div>
         <div id="getNewTiles">
-          <button>Get New Tiles</button>
+          <button onclick="getNewTiles()">Get New Tiles</button>
         </div>
         <div id="submitWord">
           <button>Submit Word</button>
@@ -34,7 +34,8 @@
     <!-- script tag has to go here -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../JS/scripts.js"></script>
     <script src="../JS/tiles.js"></script>
   </body>

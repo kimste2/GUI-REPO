@@ -7,6 +7,10 @@
 
 }
 
+#draggable{
+
+}
+
 #game{
   position: relative;
 
@@ -24,8 +28,7 @@
   position: absolute;
   display: inline;
   z-index: 950;
-  top: 45%;
+  top: 48%;
   left: 2%;
-  background-color: black;
-
+  /*background-color: black;*/
 }

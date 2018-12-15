@@ -13,7 +13,7 @@ function startGame()
    for(var i = 1; i < 8; ++i)
    {
      var id = "tile" + i;
-     var s = "<div id=\"" + id +  "\" class=\"rows\" class=\"movable\">\n";
+     var s = "<div id=\"" + id +  "\" class=\"rows\" class=\"ui-draggable\">\n";
      var t = get_single_tile();
      s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\">\n";
      s += "</div>\n";
@@ -56,8 +56,14 @@ function get_single_tile()
       alert("We ran out of tiles. Game over. ");
     }
 
-
   return String(letter + ".jpg");
 }
 
-("").on("")
+function getNewTiles()
+{
+  console.clear();
+  console.log("Getting 7 new tiles");
+  $('#tile-row').empty();
+  get_seven_tiles();
+
+}
