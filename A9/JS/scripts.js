@@ -13,7 +13,7 @@ function startGame()
    for(var i = 1; i < 8; ++i)
    {
      var id = "tile" + i;
-     var s = "<div id=\"" + id +  "\" class=\"rows\">\n";
+     var s = "<div id=\"" + id +  "\" class=\"rows\" class=\"movable\">\n";
      var t = get_single_tile();
      s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\">\n";
      s += "</div>\n";
@@ -59,3 +59,5 @@ function get_single_tile()
 
   return String(letter + ".jpg");
 }
+
+("").on("")
