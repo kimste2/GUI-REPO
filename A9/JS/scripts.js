@@ -8,7 +8,7 @@ function startGame()
 // returns 7 random tiles
  function get_seven_tiles()
  {
-   $('#tile-row').empty();
+   $('.tile-row').empty();
    //console.log("Get me some tiles");
    // for loop to get 7 tiles
    for(var i = 1; i < 8; ++i)
@@ -18,10 +18,10 @@ function startGame()
      var s = ""
      //s += "<div id=\"" + id +  "\" class=\"rows\">\n";
      var t = get_single_tile();
-     s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\" + class=\"draggable\"" + " id=\""+ id +"\">";
+     s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\" + class=\"tiles\"" + " id=\""+ id +"\">";
      //s += "\n</div>\n";
 
-     $('#tile-row').append(s);
+     $('.tile-row').append(s);
      //console.log("i is: " +i);
    }
  }
@@ -31,7 +31,7 @@ function get_single_tile()
 {
   // get random number between [0,27]
   // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  var random = Math.floor(Math.random() * (23 - 1) + 1);
+  var random = Math.floor(Math.random() * (27 - 1) + 1);
   //console.log(random);
 
   // use random number to get a letter from numberToLetter associative array
@@ -71,16 +71,22 @@ function getNewTiles()
 {
   console.clear();
 //  console.log("Getting 7 new tiles");
-  $('#tile-row').empty();
+  $('.tile-row').empty();
   get_seven_tiles();
 }
 
 // source" http://api.jqueryui.com/draggable/
 
-$('#tile1').on('click',function(){
-  console.log("tile1");
+$(document).ready(function() {
+  $('#tile1').click(function () {
+    alert("Hello!");
+
+  });
 });
-//$('#tile-row').click(function(){
+
+
+
+// $('.tile-row').click(function(){
 //   console.log("Click!");
 //   var div_id = this.id;
 //   console.log("The id is " + div_id);
