@@ -41,7 +41,7 @@ function get_single_tile()
     // check if we ran out of tiles
     if(total_tiles > 0)
     {
-      total_tiles -= 1;
+
       //check if that letter's tile is free
       if(ScrabbleTiles[letter]["number-remaining"] != 0)
       {
@@ -49,6 +49,7 @@ function get_single_tile()
         // use letter to index ScrabbleTiles associative array
         var tile = ScrabbleTiles[letter];
         ScrabbleTiles[letter]["number-remaining"] = ScrabbleTiles[letter]["number-remaining"] - 1;
+        total_tiles = total_tiles - 1;
       //  console.log("You got a " + tile.value);
       }
       else
@@ -72,19 +73,27 @@ function getNewTiles()
   console.clear();
 //  console.log("Getting 7 new tiles");
   $('.tile-row').empty();
+  // adding the tiles back since none are in play
+  total_tiles = total_tiles + 7;
   get_seven_tiles();
 }
 
 // source" http://api.jqueryui.com/draggable/
+ function move_tiles()
+{
+  var i;
+  var tile_ids =["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7"];
+  for(i = 0; i < tile_ids.length; ++i)
+  {
+    var temp_id = document.getElementById(tile_ids[i]);
+    $(temp_id).draggable();
+  }
+  console.log("Tile 1");
+}
 
-$(document).ready(function() {
-  $('#tile1').click(function () {
-    alert("Hello!");
-
-  });
+$('.tile-row').click(function(){
+  move_tiles();
 });
-
-
 
 // $('.tile-row').click(function(){
 //   console.log("Click!");
