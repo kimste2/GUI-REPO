@@ -29,7 +29,7 @@ function startGame()
 // returns a single random tile in the form of a string (such as "A.jpg")
 function get_single_tile()
 {
-  // get random number between [0,27]
+  // get random number between [1,27]
   // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   var random = Math.floor(Math.random() * (27 - 1) + 1);
   //console.log(random);
@@ -48,7 +48,7 @@ function get_single_tile()
       //  console.log( letter + " with, remaining " + ScrabbleTiles[letter]["number-remaining"]);
         // use letter to index ScrabbleTiles associative array
         var tile = ScrabbleTiles[letter];
-        ScrabbleTiles[letter]["number-remaining"] -= 1;
+        ScrabbleTiles[letter]["number-remaining"] = ScrabbleTiles[letter]["number-remaining"] - 1;
       //  console.log("You got a " + tile.value);
       }
       else
