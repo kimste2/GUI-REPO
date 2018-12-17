@@ -1,3 +1,7 @@
+// Name: Steve Kim
+// Email: steven_kim@student.uml.edu
+// GUI 1: Homework 9
+
 var ScrabbleTiles = [] ;
 ScrabbleTiles["A"] = { "value" : 1,  "original-distribution" : 9,  "number-remaining" : 9  } ;
 ScrabbleTiles["B"] = { "value" : 3,  "original-distribution" : 2,  "number-remaining" : 2  } ;

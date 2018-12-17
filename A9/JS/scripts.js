@@ -1,11 +1,17 @@
+// Name: Steve Kim
+// Email: steven_kim@student.uml.edu
+// GUI 1: Homework 9 Scrabble
 var total_tiles = 100;
 var word_score = 0;
+var tile_hand = 0;
+var letters = [];
+// function starts game
 function startGame()
 {
     get_seven_tiles();
 }
 
-// returns 7 random tiles
+// returns 7 random tiles at the start of game
  function get_seven_tiles()
  {
    $('.tile-row').empty();
@@ -18,12 +24,18 @@ function startGame()
      var s = ""
      //s += "<div id=\"" + id +  "\" class=\"rows\">\n";
      var t = get_single_tile();
+     letters += t.split(".jpg") ;
      s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\" + class=\"tiles\"" + " id=\""+ id +"\">";
      //s += "\n</div>\n";
 
      $('.tile-row').append(s);
      //console.log("i is: " +i);
+     tile_hand = 7;
+     // function runs on click
+     move_tiles();
    }
+     console.log(letters);
+     console.log("size of letters is " + letters.length);
  }
 
 // returns a single random tile in the form of a string (such as "A.jpg")
@@ -42,13 +54,13 @@ function get_single_tile()
     if(total_tiles > 0)
     {
 
-      //check if that letter's tile is free
+      //check if there is that letter's tile is free
       if(ScrabbleTiles[letter]["number-remaining"] != 0)
       {
       //  console.log( letter + " with, remaining " + ScrabbleTiles[letter]["number-remaining"]);
         // use letter to index ScrabbleTiles associative array
         var tile = ScrabbleTiles[letter];
-        ScrabbleTiles[letter]["number-remaining"] = ScrabbleTiles[letter]["number-remaining"] - 1;
+      //  ScrabbleTiles[letter]["number-remaining"] = ScrabbleTiles[letter]["number-remaining"] - 1;
         total_tiles = total_tiles - 1;
       //  console.log("You got a " + tile.value);
       }
@@ -78,7 +90,8 @@ function getNewTiles()
   get_seven_tiles();
 }
 
-// source" http://api.jqueryui.com/draggable/
+// source: http://api.jqueryui.com/draggable/
+// function allows for the seven tiles to be "draggable" after a click event
  function move_tiles()
 {
   var i;
@@ -87,29 +100,26 @@ function getNewTiles()
   {
     var temp_id = document.getElementById(tile_ids[i]);
     $(temp_id).draggable({
-      accept: ".special"
+      accept: ".special",
+      appendTo: tileBoard,
     });
 
   }
-  console.log("Tiles are draggable");
+
   // http://api.jqueryui.com/droppable/
   var board_id  = document.getElementById('tileBoard');
   $(board_id).droppable({
     drop: function() {
-    console.log("Board is ready to go.");
-  }
-});
+      //console.log("Board is ready to go.");
+    }
+  });
 }
 
-$('.tile-row').click(function(){
-  move_tiles();
-});
 
-// $('.tile-row').click(function(){
-//   console.log("Click!");
-//   var div_id = this.id;
-//   console.log("The id is " + div_id);
-//   $( function() {
-//     $( "#tile-row" ).draggable();
-//   } );
-// });
+function submitWord()
+{
+  alert("submit the word");
+  var temp = document.getElementById("board");
+
+  // get tiles for word
+}

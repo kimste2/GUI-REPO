@@ -1,3 +1,9 @@
+<!--
+Name: Steve Kim
+Email: steven_kim@student.uml.edu
+GUI 1: Homework 9 Scrable
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +15,7 @@
     <p>Scrabble Implementation</p>
     <div id="game">
       <div id="tileBoard">
-          <img src="../Images/single_line.png" alt="Game board" class="ui-droppable">
+          <img src="../Images/single_line.png" alt="Game board" class="ui-droppable" id="board">
         </div>
         <div id="Score">
           Your score is:
@@ -27,7 +33,7 @@
           <button onclick="getNewTiles()">Get New Tiles</button>
         </div>
         <div id="submitWord">
-          <button>Submit Word</button>
+          <button onclick="submitWord()">Submit Word</button>
         </div>
     </div>
 
