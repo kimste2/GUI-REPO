@@ -86,9 +86,19 @@ function getNewTiles()
   for(i = 0; i < tile_ids.length; ++i)
   {
     var temp_id = document.getElementById(tile_ids[i]);
-    $(temp_id).draggable();
+    $(temp_id).draggable({
+      accept: ".special"
+    });
+
   }
-  console.log("Tile 1");
+  console.log("Tiles are draggable");
+  // http://api.jqueryui.com/droppable/
+  var board_id  = document.getElementById('tileBoard');
+  $(board_id).droppable({
+    drop: function() {
+    console.log("Board is ready to go.");
+  }
+});
 }
 
 $('.tile-row').click(function(){
