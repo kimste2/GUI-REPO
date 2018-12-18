@@ -4,17 +4,12 @@
 var total_tiles = 100;
 var word_score = 0;
 var tile_hand = 0;
-var letters = [];
+var tile_string = [];
+
 // function starts game
 function startGame()
 {
     get_seven_tiles();
-}
-
-
-function get_seven_game_tiles()
-{
-
 }
 
 // returns 7 random tiles at the start of game
@@ -30,7 +25,7 @@ function get_seven_game_tiles()
      var s = ""
      //s += "<div id=\"" + id +  "\" class=\"rows\">\n";
      var t = get_single_tile();
-     letters += t.split(".jpg") ;
+
      s += "<img src=\"../Images/" + t + "\" height=\"80\" width=\"80\" alt=\"" + t + "\" + class=\"tiles\"" + " id=\""+ id +"\">";
      //s += "\n</div>\n";
 
@@ -40,8 +35,7 @@ function get_seven_game_tiles()
      // function runs on click
      move_tiles();
    }
-     console.log(letters);
-     console.log("size of letters is " + letters.length);
+
  }
 
 // returns a single random tile in the form of a string (such as "A.jpg")
@@ -109,14 +103,16 @@ function getNewTiles()
       accept: ".special",
       appendTo: tileBoard,
     });
-
   }
 
   // http://api.jqueryui.com/droppable/
   var board_id  = document.getElementById('tileBoard');
   $(board_id).droppable({
     drop: function(event, ui){
-      console.log("");
+      var test = ui.draggable.index();
+      var temp_id = document.getElementById(tile_ids[test]);
+      console.log("Should see a letter: " + temp_id.alt.split(".jpg"));
+      tile_string.push(temp_id.alt.split(".jpg")[0]);
     }
   });
 }
@@ -124,8 +120,14 @@ function getNewTiles()
 
 function submitWord()
 {
-  alert("submit the word");
-  var temp = document.getElementById("board");
-
+  console.log()
+  var i;
+  for(i = 0; i < tile_string.length; ++ i)
+  {
+    console.log(typeof(tile_string[i]));
+    var letter = tile_string[i];
+    var score = ScrabbleTiles[letter]["value"];
+    console.log("Score is " + score);
+  }
   // get tiles for word
 }
