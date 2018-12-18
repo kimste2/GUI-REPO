@@ -11,6 +11,12 @@ function startGame()
     get_seven_tiles();
 }
 
+
+function get_seven_game_tiles()
+{
+
+}
+
 // returns 7 random tiles at the start of game
  function get_seven_tiles()
  {
@@ -107,10 +113,10 @@ function getNewTiles()
   }
 
   // http://api.jqueryui.com/droppable/
-  var board_id  = document.getElementById('board');
+  var board_id  = document.getElementById('tileBoard');
   $(board_id).droppable({
     drop: function(event, ui){
-      alert("Hello");
+      console.log("");
     }
   });
 }
