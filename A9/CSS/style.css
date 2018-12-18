@@ -4,6 +4,7 @@
   GUI 1: Homework 9 Scrable
 */
 
+
 .rows{
   display: inline;
 }
@@ -14,7 +15,7 @@
 }
 
 #tile1{
-  border:2px dotted blue;
+  /*border:2px dotted blue;*/
 }
 
 .draggable{

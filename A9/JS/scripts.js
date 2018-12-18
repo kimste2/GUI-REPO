@@ -107,10 +107,10 @@ function getNewTiles()
   }
 
   // http://api.jqueryui.com/droppable/
-  var board_id  = document.getElementById('tileBoard');
+  var board_id  = document.getElementById('board');
   $(board_id).droppable({
-    drop: function() {
-      //console.log("Board is ready to go.");
+    drop: function(event, ui){
+      alert("Hello");
     }
   });
 }
