@@ -5,6 +5,7 @@ var total_tiles = 100;
 var word_score = 0;
 var tile_hand = 0;
 var tile_string = [];
+var is_double_word = false;
 
 // function starts game
 function startGame()
@@ -98,21 +99,25 @@ function getNewTiles()
   var tile_ids =["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7"];
   for(i = 0; i < tile_ids.length; ++i)
   {
-    var temp_id = document.getElementById(tile_ids[i]);
-    $(temp_id).draggable({
+    // var temp_id = document.getElementById(tile_ids[i]);
+    //console.log($("#"+tile_ids[i]));
+    $("#"+tile_ids[i]).draggable({
       accept: ".special",
       appendTo: tileBoard,
     });
   }
 
   // http://api.jqueryui.com/droppable/
-  var board_id  = document.getElementById('tileBoard');
-  $(board_id).droppable({
+  var board_id  = 'tileBoard';
+  $("#"+board_id).children().droppable({
     drop: function(event, ui){
+      // get letter
       var test = ui.draggable.index();
       var temp_id = document.getElementById(tile_ids[test]);
       console.log("Should see a letter: " + temp_id.alt.split(".jpg"));
       tile_string.push(temp_id.alt.split(".jpg")[0]);
+
+
     }
   });
 }
@@ -120,7 +125,8 @@ function getNewTiles()
 
 function submitWord()
 {
-  console.log()
+  // how do I check if a double word or letter is there?
+
   var i;
   for(i = 0; i < tile_string.length; ++ i)
   {
@@ -128,6 +134,24 @@ function submitWord()
     var letter = tile_string[i];
     var score = ScrabbleTiles[letter]["value"];
     console.log("Score is " + score);
+    word_score += score;
   }
-  // get tiles for word
+
+  if(is_double_word == true)
+  {
+    word_score = 2 * word_score;
+  }
+
+  is_double_word = false;
+  console.log(word_score);
 }
+
+function quit()
+{
+  alert("Quitting game.");
+
+}
+
+$("document").ready(function(){
+  move_tiles();
+})
