@@ -3,12 +3,13 @@
 // GUI 1: Homework 9 Scrabble
 var total_tiles = 100;
 var word_score = 0;
+var total_score = 0;
 var tile_hand = 0;
 var tile_string = [];
 var is_double_word = false;
 var is_double_letter;
 var word = "";
-
+var temp_score = 0;
 // function starts game
 function startGame(){
     get_seven_tiles();
@@ -22,7 +23,7 @@ function startGame(){
    for(var i = 1; i < 8; ++i){
      var id = "tile" + String(i);
      //console.log("id is " + id);
-     var s = ""
+     var s = "";
      //s += "<div id=\"" + id +  "\" class=\"rows\">\n";
      var t = get_single_tile();
 
@@ -108,36 +109,44 @@ function getNewTiles(){
     //  console.log("Should see a letter: " + temp_id.alt.split(".jpg"));
       tile_string.push(temp_id.alt.split(".jpg")[0]);
       word += temp_id.alt.split(".jpg")[0];
-      console.log("word is " + word);
+    //  console.log("word is " + word);
     }
   });
 }
 
 
 function submitWord(){
-
   var i;
   for(i = 0; i < tile_string.length; ++ i){
-    console.log(typeof(tile_string[i]));
+    //console.log(typeof(tile_string[i]));
     var letter = tile_string[i];
-    var score = ScrabbleTiles[letter]["value"];
+    var letter_score = ScrabbleTiles[letter]["value"];
+
     if(is_double_letter == i){
       console.log("double it");
-      score = 2 * score;
-      is_double_letter = "$";
-      console.log("double score is " + score);
+      letter_score = 2 * letter_score;
+      is_double_letter = -1;
+      console.log("double score is " + letter_score);
     }
+    console.log("Letter score is " + letter_score);
+    word_score += letter_score;
 
-    console.log("Score is " + score);
-    word_score += score;
   }
 
   if(is_double_word == true){
-    word_score = 2 * word_score;
+    word_score = word_score * 2;
     is_double_word = false;
+    console.log("Double word score is " + word_score);
   }
-
+  
   console.log("Word score is " + word_score);
+  total_score += word_score;
+  word_score = 0;
+  console.log("Total score is " + total_score);
+
+  $("#Score").replaceWith("Score is now " + total_score + " with word " +  word);
+  word = "";
+
 }
 
 // funciton for double word event
@@ -147,10 +156,10 @@ function drop_on_double_word(event){
 
 // function for double letter drop event
 function drop_on_double_letter(event){
-  console.log('double letter!');
+//  console.log('double letter!');
   // need to get letter droppped on top
   is_double_letter = tile_string.length;
-  console.log("double letter score at " + is_double_letter);
+//  console.log("double letter score at " + is_double_letter);
 
 }
 
