@@ -125,7 +125,6 @@ function getNewTiles()
 
 function submitWord()
 {
-  // how do I check if a double word or letter is there?
 
   var i;
   for(i = 0; i < tile_string.length; ++ i)
@@ -146,10 +145,15 @@ function submitWord()
   console.log(word_score);
 }
 
+function drop_on_double_word(event){
+  is_double_word = true; 
+}
+
 function quit()
 {
-  alert("Quitting game.");
-
+//  var message = "Quiting game.\nYour score is " + score;
+  alert("Quit");
+  location.reload();
 }
 
 $("document").ready(function(){
