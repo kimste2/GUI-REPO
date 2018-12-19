@@ -1,6 +1,7 @@
 // Name: Steve Kim
 // Email: steven_kim@student.uml.edu
 // GUI 1: Homework 9 Scrabble
+// Purpose: javascript functions for index.html
 var total_tiles = 100;
 var word_score = 0;
 var total_score = 0;
@@ -86,7 +87,8 @@ function getNewTiles(){
 }
 
 // source: http://api.jqueryui.com/draggable/
-// function allows for the seven tiles to be "draggable" after a click event
+// function allows for the seven letter tiles to be "draggable" after a click event
+// also adds droppable to the game board.
  function move_tiles(){
   var i;
   var tile_ids =["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7"];
@@ -114,7 +116,8 @@ function getNewTiles(){
   });
 }
 
-
+// funciton computers word score and updates a total score, then prints
+// it out
 function submitWord(){
   var i;
   for(i = 0; i < tile_string.length; ++ i){
@@ -138,17 +141,29 @@ function submitWord(){
     is_double_word = false;
     console.log("Double word score is " + word_score);
   }
-  
+
   console.log("Word score is " + word_score);
   total_score += word_score;
   word_score = 0;
+
   console.log("Total score is " + total_score);
 
-  $("#Score").replaceWith("Score is now " + total_score + " with word " +  word);
-  word = "";
+  $("#Score").replaceWith("Score is now " + String(total_score) + " with word " +  word);
+  replace_tiles(tile_string.length);
+  clear_board();
 
 }
 
+// replaces tiles used to make word
+function replace_tiles(number){
+  console.log("Need to replace " + number + " tiles.");
+
+}
+
+// function clears board
+function clear_board(){
+  alert("clear-board");
+}
 // funciton for double word event
 function drop_on_double_word(event){
   is_double_word = true;

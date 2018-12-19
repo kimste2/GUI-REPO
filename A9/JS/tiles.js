@@ -1,6 +1,7 @@
 // Name: Steve Kim
 // Email: steven_kim@student.uml.edu
 // GUI 1: Homework 9
+// Purpose: stores two associate arrays
 
 // crediting Dr. Heines for using his  associate array
 var ScrabbleTiles = [] ;
