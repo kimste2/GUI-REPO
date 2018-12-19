@@ -6,21 +6,19 @@ var word_score = 0;
 var tile_hand = 0;
 var tile_string = [];
 var is_double_word = false;
+var is_double_letter = "$";
 
 // function starts game
-function startGame()
-{
+function startGame(){
     get_seven_tiles();
 }
 
 // returns 7 random tiles at the start of game
- function get_seven_tiles()
- {
+ function get_seven_tiles(){
    $('.tile-row').empty();
    //console.log("Get me some tiles");
    // for loop to get 7 tiles
-   for(var i = 1; i < 8; ++i)
-   {
+   for(var i = 1; i < 8; ++i){
      var id = "tile" + String(i);
      //console.log("id is " + id);
      var s = ""
@@ -40,8 +38,7 @@ function startGame()
  }
 
 // returns a single random tile in the form of a string (such as "A.jpg")
-function get_single_tile()
-{
+function get_single_tile(){
   // get random number between [1,27]
   // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   var random = Math.floor(Math.random() * (27 - 1) + 1);
@@ -52,12 +49,10 @@ function get_single_tile()
 //  console.log("We got a " + letter );
 
     // check if we ran out of tiles
-    if(total_tiles > 0)
-    {
+    if(total_tiles > 0){
 
       //check if there is that letter's tile is free
-      if(ScrabbleTiles[letter]["number-remaining"] != 0)
-      {
+      if(ScrabbleTiles[letter]["number-remaining"] != 0){
       //  console.log( letter + " with, remaining " + ScrabbleTiles[letter]["number-remaining"]);
         // use letter to index ScrabbleTiles associative array
         var tile = ScrabbleTiles[letter];
@@ -65,15 +60,13 @@ function get_single_tile()
         total_tiles = total_tiles - 1;
       //  console.log("You got a " + tile.value);
       }
-      else
-      {
+      else{
       //  console.log("Total tiles " + total_tiles);
       //  console.log("Get a different tile");
       //  alert("You need to get some different tile but you didn't do it yet.");
       }
     }
-    else // ran out of game tiles
-    {
+    else{ // ran out of game tiles
       alert("We ran out of tiles. Game over. ");
     }
 
@@ -81,8 +74,7 @@ function get_single_tile()
 }
 
 // function clears #tile-row and then gets seven new game tiles and is associated with a button click
-function getNewTiles()
-{
+function getNewTiles(){
   console.clear();
 //  console.log("Getting 7 new tiles");
   $('.tile-row').empty();
@@ -93,12 +85,10 @@ function getNewTiles()
 
 // source: http://api.jqueryui.com/draggable/
 // function allows for the seven tiles to be "draggable" after a click event
- function move_tiles()
-{
+ function move_tiles(){
   var i;
   var tile_ids =["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7"];
-  for(i = 0; i < tile_ids.length; ++i)
-  {
+  for(i = 0; i < tile_ids.length; ++i){
     // var temp_id = document.getElementById(tile_ids[i]);
     //console.log($("#"+tile_ids[i]));
     $("#"+tile_ids[i]).draggable({
@@ -123,34 +113,52 @@ function getNewTiles()
 }
 
 
-function submitWord()
-{
+function submitWord(){
 
   var i;
-  for(i = 0; i < tile_string.length; ++ i)
-  {
+  for(i = 0; i < tile_string.length; ++ i){
     console.log(typeof(tile_string[i]));
     var letter = tile_string[i];
     var score = ScrabbleTiles[letter]["value"];
+    if(is_double_letter == ScrabbleTiles[letter])
+    {
+      console.log("double it");
+      score = 2 * score;
+      is_double_letter = "$";
+      console.log("double score is " + score);
+    }
     console.log("Score is " + score);
     word_score += score;
   }
 
-  if(is_double_word == true)
-  {
+  if(is_double_word == true){
     word_score = 2 * word_score;
+    is_double_word = false;
   }
 
-  is_double_word = false;
   console.log(word_score);
 }
 
+// funciton for double word event
 function drop_on_double_word(event){
-  is_double_word = true; 
+  is_double_word = true;
 }
 
-function quit()
-{
+// function for double letter drop event
+function drop_on_double_letter(event){
+  console.log('double letter!');
+  $( "#tile6" ).draggable({
+  drag: function( event, ui ) {
+
+  }
+});
+  // need to get letter droppped on top
+
+
+
+}
+
+function quit(){
 //  var message = "Quiting game.\nYour score is " + score;
   alert("Quit");
   location.reload();
