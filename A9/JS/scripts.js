@@ -6,7 +6,8 @@ var word_score = 0;
 var tile_hand = 0;
 var tile_string = [];
 var is_double_word = false;
-var is_double_letter = "$";
+var is_double_letter;
+var word = "";
 
 // function starts game
 function startGame(){
@@ -104,10 +105,10 @@ function getNewTiles(){
       // get letter
       var test = ui.draggable.index();
       var temp_id = document.getElementById(tile_ids[test]);
-      console.log("Should see a letter: " + temp_id.alt.split(".jpg"));
+    //  console.log("Should see a letter: " + temp_id.alt.split(".jpg"));
       tile_string.push(temp_id.alt.split(".jpg")[0]);
-
-
+      word += temp_id.alt.split(".jpg")[0];
+      console.log("word is " + word);
     }
   });
 }
@@ -120,13 +121,13 @@ function submitWord(){
     console.log(typeof(tile_string[i]));
     var letter = tile_string[i];
     var score = ScrabbleTiles[letter]["value"];
-    if(is_double_letter == ScrabbleTiles[letter])
-    {
+    if(is_double_letter == i){
       console.log("double it");
       score = 2 * score;
       is_double_letter = "$";
       console.log("double score is " + score);
     }
+
     console.log("Score is " + score);
     word_score += score;
   }
@@ -136,7 +137,7 @@ function submitWord(){
     is_double_word = false;
   }
 
-  console.log(word_score);
+  console.log("Word score is " + word_score);
 }
 
 // funciton for double word event
@@ -147,14 +148,9 @@ function drop_on_double_word(event){
 // function for double letter drop event
 function drop_on_double_letter(event){
   console.log('double letter!');
-  $( "#tile6" ).draggable({
-  drag: function( event, ui ) {
-
-  }
-});
   // need to get letter droppped on top
-
-
+  is_double_letter = tile_string.length;
+  console.log("double letter score at " + is_double_letter);
 
 }
 
