@@ -106,11 +106,17 @@ function getNewTiles(){
   $("#"+board_id).children().droppable({
     drop: function(event, ui){
       // get letter
-      var test = ui.draggable.index();
-      var temp_id = document.getElementById(tile_ids[test]);
+      var tile_index = ui.draggable.index();
+      var board_index = $(this).index();
+      var temp_id = document.getElementById(tile_ids[tile_index]);
     //  console.log("Should see a letter: " + temp_id.alt.split(".jpg"));
-      tile_string.push(temp_id.alt.split(".jpg")[0]);
-      word += temp_id.alt.split(".jpg")[0];
+      tile_string[board_index] = temp_id.alt.split(".jpg")[0];
+      // source: https://stackoverflow.com/questions/33392307/what-does-the-reduce-javascript-function-do
+      word = tile_string.reduce(function(str, letter){
+        if(typeof letter === "string")
+          return str + letter;
+        return str;
+      }, "")
     //  console.log("word is " + word);
     }
   });
@@ -122,18 +128,22 @@ function submitWord(){
   var i;
   for(i = 0; i < tile_string.length; ++ i){
     //console.log(typeof(tile_string[i]));
-    var letter = tile_string[i];
-    var letter_score = ScrabbleTiles[letter]["value"];
+    if(tile_string[i] != null){
+      var letter = tile_string[i];
+      console.log("Letter is " + letter);
 
-    if(is_double_letter == i){
-      console.log("double it");
-      letter_score = 2 * letter_score;
-      is_double_letter = -1;
-      console.log("double score is " + letter_score);
+
+      var letter_score = ScrabbleTiles[letter]["value"];
+
+      if(is_double_letter == i){
+        console.log("double it");
+        letter_score = 2 * letter_score;
+        is_double_letter = -1;
+        console.log("double score is " + letter_score);
+      }
+      console.log("Letter score is " + letter_score);
+      word_score += letter_score;
     }
-    console.log("Letter score is " + letter_score);
-    word_score += letter_score;
-
   }
 
   if(is_double_word == true){
@@ -145,10 +155,10 @@ function submitWord(){
   console.log("Word score is " + word_score);
   total_score += word_score;
   word_score = 0;
-
+  tile_string = [];
   console.log("Total score is " + total_score);
 
-  $("#Score").replaceWith("Score is now " + String(total_score) + " with word " +  word);
+  $("#Score").replaceWith("<div id=\"Score\">\nScore is now " + String(total_score) + " with word: " +  word + "</div>");
   replace_tiles(tile_string.length);
   clear_board();
 
@@ -162,7 +172,7 @@ function replace_tiles(number){
 
 // function clears board
 function clear_board(){
-  alert("clear-board");
+  //alert("clear-board");
 }
 // funciton for double word event
 function drop_on_double_word(event){
@@ -180,7 +190,7 @@ function drop_on_double_letter(event){
 
 function quit(){
 //  var message = "Quiting game.\nYour score is " + score;
-  alert("Quit");
+  //alert("Quit");
   location.reload();
 }
 
